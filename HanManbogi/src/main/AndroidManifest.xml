@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.greenland.android.manbogi"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="23" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".StartActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <service android:name="com.greenland.android.manbogi.MyServiceIntent" android:enabled="true">
+            <intent-filter>
+                <action android:name="app.manbo.Service"></action>
+            </intent-filter>
+        </service>
+    </application>
+
+    <!--반드시 추가--><uses-permission android:name="android.permission.INTERNET" />
+    <!--위치정보활용시 추가--><uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!--위치정보활용시 추가--><uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!--WIFI 상태활용시 추가--><uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!--WIFI 상태활용시 추가--><uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+
+</manifest>
